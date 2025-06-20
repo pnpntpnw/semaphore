@@ -1,0 +1,10 @@
+---
+- hosts: myhosts
+  become: true
+  tasks:
+   - name: Update all packages to their latest version
+     ansible.builtin.apt:
+       name: "*"
+       state: latest
+       autoremove: yes
+       purge: true
