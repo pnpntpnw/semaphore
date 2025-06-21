@@ -1,0 +1,6 @@
+---
+- hosts: dockerhosts
+  become: true
+  tasks:
+   - name: Update docker images, restart containers, and prune dangling images on hosts
+     ansible.builtin.shell: dockcheck.sh -ap
